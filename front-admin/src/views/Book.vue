@@ -232,9 +232,10 @@
 <script>
     import CommonUtil from "@/utils/CommonUtil";
 	import _ from 'lodash';
+    import ApiServiceError from "@/plugins/api-service-error";
 
     export default {
-        inject: ['contentsService'],
+        inject: ['bookService'],
         data() {
             return {
                 fields: [
@@ -421,31 +422,41 @@
 				if( !this.validateParams() ) return false;
 				if( !this.validateUploadFile() ) return false;
 
-				const result = await this.apiInsertBook();
-				if(result.errorCode) {
-					this.$showAlert({
-						title: '알림',
-						content: result.errorMessage,
-						callback: () => {},
-						okBtnName: '확인'
-					});
-					return false;
-				}
+                try {
+                    const result = await this.apiInsertBook();
+                } catch ( e ) {
+                    if(e instanceof ApiServiceError) {
+                        this.$showAlert({
+                            title: '알림',
+                            content: result.errorMessage,
+                            callback: () => {},
+                            okBtnName: '확인'
+                        });
+                    } else {
+                        throw e;
+                    }
+                    return false;
+                }
 				return true;
             },
 	        async updateContents() {
 				console.warn('update params', this.insertParams);
 		        if( !this.validateParams() ) return false;
-				const result = await this.apiUpdateBook();
-				if(result.errorCode){
-					this.$showAlert({
-						title: '알림',
-						content: result.errorMessage,
-						callback: () => {},
-						okBtnName: '확인',
-					});
-					return false;
-				}
+				try {
+                    const result = await this.apiUpdateBook();
+                } catch ( e ) {
+                    if(e instanceof ApiServiceError) {
+                        this.$showAlert({
+                            title: '알림',
+                            content: result.errorMessage,
+                            callback: () => {},
+                            okBtnName: '확인'
+                        });
+                    } else {
+                        throw e;
+                    }
+                    return false;
+                }
 				return true;
 	        },
 	        validateParams() {
@@ -470,6 +481,11 @@
 					&& CommonUtil.validateRequired(this, 'insertParams', 'displayYn', '홈 화면 노출')
 	        },
 
+
+            validateUploadFile() {
+                return CommonUtil.validateRequired(this, 'uploadFile', 'mainImageFile', '심볼/패키지 이미지');
+            },
+
 	        // init 탭 및 섹션 검색 옵션
 			async initData(){
 
@@ -480,30 +496,26 @@
 				await this.apiGetBookList();
 
 				// 탭 겁색시에만 드래그 가능
-				if( !_.isEmpty(this.searchParams.tabId) && !_.isEmpty(this.searchParams.sectionId) )
-					this.dragDisabled = false;
-				else
-					this.dragDisabled = true;
 	        },
 	        async apiGetBookList(){
-				const response = await this.contentsService.listBook( this.searchParams );
+				const response = await this.bookService.listBook( this.searchParams );
 				console.warn(response);
 				this.items = response.list;
 				this.searchParams.totalCount = response.totalCount;
 	        },
 
 	        async apiInsertBook() {
-				const response = await this.contentsService.insertBook(this.insertParams, this.uploadFile);
+				const response = await this.bookService.insertBook(this.insertParams, this.uploadFile);
 				return response;
 	        },
 
 	        async apiUpdateBook() {
-				const response = await this.contentsService.updateBook(this.insertParams, this.uploadFile);
+				const response = await this.bookService.updateBook(this.insertParams, this.uploadFile);
 				return response;
 	        },
 
 	        async apiDeleteBook() {
-		        const response = await this.contentsService.deleteBook(this.selectedRow);
+		        const response = await this.bookService.deleteBook(this.selectedRow);
 	        },
         },
         async mounted() {

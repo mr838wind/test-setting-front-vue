@@ -3,14 +3,14 @@ import VueRouter from 'vue-router'
 import EnumLayout from "@/plugins/layout/enum-layout";
 //
 import Home from "@/views/Home";
-import ContentsManage from "@/views/ContentsManage";
+import Book from "@/views/Book";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/contents-manage',
+    redirect: '/book',
   },
   {
     path: '/home',
@@ -18,8 +18,8 @@ const routes = [
     meta: { layout: EnumLayout.DefaultLayout }
   },
   {
-    path: '/contents-manage',
-    component: ContentsManage,
+    path: '/book',
+    component: Book,
     meta: { layout: EnumLayout.FlatLayout }
   },
 

@@ -4,7 +4,7 @@ import CommonUtil from "@/utils/CommonUtil";
 // import FileDownload from "js-file-download";
 import _ from "lodash";
 
-export class ContentsService {
+export class BookService {
 
     constructor(hostWithPrefix) {
         this.hostWithPrefix = hostWithPrefix;
@@ -21,7 +21,7 @@ export class ContentsService {
         return axios
             .get(`${this.hostWithPrefix}/book/list`, {params: param})
             .then(response => {
-                return response.data.data;
+                return response.data;
             })
             .catch(e => {
                 console.warn(e);

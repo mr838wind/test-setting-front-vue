@@ -1,4 +1,4 @@
-import {ContentsService} from "@/services/modules/ContentsService";
+import {BookService} from "@/services/modules/BookService";
 
 const API_URL_HOST = process.env.VUE_APP_API_HOST; // host
 const API_URL_HOST_WITH_PREFIX = API_URL_HOST + '/api'
@@ -9,7 +9,7 @@ const API_URL_HOST_WITH_PREFIX = API_URL_HOST + '/api'
  */
 const services = {
     //loginService: new LoginService(API_URL_HOST_WITH_PREFIX), //로그인
-    contentsService: new ContentsService(API_URL_HOST_WITH_PREFIX), //book
+    bookService: new BookService(API_URL_HOST_WITH_PREFIX), //book
 }
 
 console.log('>>== services=%o', services);
