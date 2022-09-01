@@ -10,7 +10,6 @@
 
 <script>
     export default {
-        name: 'DefaultLayout',
         components: {
         },
         methods: {

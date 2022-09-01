@@ -27,7 +27,7 @@
 <style scoped lang="scss">
     .default-layout {
         .body-wrap {
-            padding: 52px 0 0 250px;
+            padding: 50px 0;
         }
     }
 </style>

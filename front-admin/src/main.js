@@ -12,11 +12,13 @@ Vue.use(BootstrapVueIcons)
 //== [e] bootstrap-vue
 
 //== plugins
-import InjectLayout from '@/plugins/inject-layout'
+import '@/plugins/filters'
+import '@/plugins/inject-layout'
+
 
 
 //== @ is an alias to /src in import
-
+//
 Vue.config.productionTip = false
 
 new Vue({

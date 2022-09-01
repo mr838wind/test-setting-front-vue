@@ -24,12 +24,11 @@
 </style>
 <script>
 
-
+import EnumLayout from "@/plugins/enum-layout";
 export default {
     computed: {
         layout() {
-            const default_layout = "DefaultLayout";
-            return (this.$route.meta.layout || default_layout);
+            return (this.$route.meta.layout || EnumLayout.DefaultLayout);
         }
     },
 }

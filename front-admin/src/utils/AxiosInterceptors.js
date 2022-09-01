@@ -33,11 +33,12 @@ axiosInterceptors.interceptors.response.use(function (response) {
 
     console.log(">>== axiosInterceptors.interceptors: error: ");
     console.log(error);
+
     if(error.response){
         return Promise.reject(new ApiServiceError( error.response.data ));
+    }else{
+        return Promise.reject( new ApiServiceError( {errorCode:'NETWORK_ERROR', errorMessage:'Network Error'} ) );
     }
-    // 기타 에러
-    return Promise.reject(error);
 
 });
 

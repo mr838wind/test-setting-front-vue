@@ -1,5 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
+import EnumLayout from "@/plugins/enum-layout";
 import Home from "@/views/Home";
 
 Vue.use(VueRouter)
@@ -12,6 +13,7 @@ const routes = [
   {
     path: '/home',
     component: Home,
+    meta: { layout: EnumLayout.DefaultLayout }
   },
 
   /*{
