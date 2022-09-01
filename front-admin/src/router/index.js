@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import EnumLayout from "@/plugins/enum-layout";
+import EnumLayout from "@/plugins/layout/enum-layout";
 import Home from "@/views/Home";
 
 Vue.use(VueRouter)

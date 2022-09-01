@@ -24,7 +24,7 @@
 </style>
 <script>
 
-import EnumLayout from "@/plugins/enum-layout";
+import EnumLayout from "@/plugins/layout/enum-layout";
 export default {
     computed: {
         layout() {

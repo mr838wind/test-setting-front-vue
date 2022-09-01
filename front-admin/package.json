@@ -11,11 +11,14 @@
     "axios": "^0.27.2",
     "bootstrap-vue": "^2.22.0",
     "core-js": "^3.6.5",
+    "dropzone": "^6.0.0-beta.2",
     "js-file-download": "^0.4.12",
     "lodash": "^4.17.21",
     "moment": "^2.29.4",
     "vue": "^2.6.11",
+    "vue-advanced-cropper": "^1.11.3",
     "vue-router": "^3.2.0",
+    "vuedraggable": "^2.24.3",
     "vuex": "^3.4.0"
   },
   "devDependencies": {
