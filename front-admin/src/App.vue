@@ -82,3 +82,8 @@ export default {
     },
 }
 </script>
+<style lang="scss">
+    /* global css: todo/change to bootstrap css */
+    @import '~@/assets/scss/style.scss';
+    @import '~@/assets/scss/componentsStyle.scss';
+</style>

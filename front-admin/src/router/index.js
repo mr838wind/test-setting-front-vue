@@ -1,20 +1,29 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import EnumLayout from "@/plugins/layout/enum-layout";
+//
 import Home from "@/views/Home";
+import ContentsManage from "@/views/ContentsManage";
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    redirect: '/home',
+    redirect: '/contents-manage',
   },
   {
     path: '/home',
     component: Home,
     meta: { layout: EnumLayout.DefaultLayout }
   },
+  {
+    path: '/contents-manage',
+    component: ContentsManage,
+    meta: { layout: EnumLayout.FlatLayout }
+  },
+
+
 
   /*{
     path: '/about',

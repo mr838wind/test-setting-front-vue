@@ -1,0 +1,245 @@
+/***********************************
+    Radio Box Group Component
+***********************************/
+.radio-group-box {
+    .form-group-b {
+        display: inline-flex;
+        align-items: center;
+        &.btn-group {
+            label {
+                min-width: 100px;
+                &:not(:first-child) {
+                    border-left: 0;
+                }
+            }
+        }
+    }
+}
+
+
+/***********************************
+    Modal Component
+***********************************/
+.modal-header {
+    h3 {
+        font-size: 1.25rem;
+        font-weight: 700;
+        color: #777;
+        margin-bottom: 0;
+    }
+    .bi-x {
+        cursor: pointer;
+        margin-bottom: 0;
+        color: #777;
+    }
+}
+.modal-footer {
+    justify-content: center;
+    .btn {
+        width: 100px;
+    }
+}
+
+
+/***********************************
+    Table Component
+***********************************/
+.sr-only {
+    display: none;
+}
+.b-table-sticky-header {
+    max-height: 230px;
+}
+.table {
+    th, td {
+        vertical-align: middle;
+        font-size: 0.875rem;
+        p {
+            margin-bottom: 0;
+        }
+    }
+    .ellipsis-wrap {
+        max-width: 200px;
+        overflow:hidden;
+        text-overflow:ellipsis;
+        white-space:nowrap;
+    }
+    .img-wrap {
+        width: 100px;
+        padding-bottom: 100px;
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        img {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+// Draggable Table
+.sortable-ghost {
+    opacity: 0.5;
+    background: #007bff !important;
+}
+
+
+/***********************************
+    Pagination Component
+***********************************/
+.pagination {
+    justify-content: center;
+    margin-top: 50px;
+}
+
+
+/***********************************
+    File Upload Component
+***********************************/
+
+// Image Crop
+.image-crop {
+    .toolbar {
+        background: #eee;
+        padding: 25px;
+        .input-box {
+            display: flex;
+            align-items: center;
+            margin-bottom: 5px;
+        }
+        .title {
+            width: 75px;
+            margin-right: 10px;
+            margin-bottom: 0;
+        }
+    }
+    .btn-wrap {
+        margin-top: 15px;
+    }
+}
+.cropper-wrapper {
+    position: relative;
+}
+
+// File Upload
+.file-wrap {
+    position: relative;
+    .dz-message {
+        height: 100%;
+        min-height: 70px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 1px dotted #adb5bd;
+        border-radius: .5rem;
+        position: relative;
+        cursor: pointer;
+        z-index: 999;
+        &:hover {
+            border: 1px dotted #555;
+        }
+        .dz-button {
+            background: none;
+            border: 0;
+        }
+    }
+    .dropzone {
+        margin-bottom: 0 !important;
+    }
+    .dropzone-single {
+        position: relative;
+        &.dz-max-files-reached {
+            .dz-preview-single {
+                position: absolute;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                left: 0;
+                border-radius: .5rem;
+                overflow: hidden;
+            }
+            .dz-message {
+                opacity: 0;
+                &:hover {
+                    background-color: rgba(0, 0, 0, 0.9);
+                    opacity: 1;
+                    .dz-button {
+                        color: #fff;
+                    }
+                }
+            }
+        }
+    }
+    .dropzone-multiple {
+        height: auto !important;
+        margin-bottom: 0 !important;
+        .list-group-item {
+            margin-bottom: 10px;
+            border: 0;
+            h4 {
+                font-size: 1.125rem;
+            }
+        }
+        .avatar {
+            margin-bottom: 12px;
+        }
+    }
+    .delete-image {
+        position: absolute;
+        top: 12px;
+        right: 12px;
+        z-index: 999;
+    }
+}
+
+
+/***********************************
+    Datepicker Group Component
+***********************************/
+.date-group {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .custom-select,
+    .b-form-datepicker {
+        &:not(:first-child) {
+            margin-left: 10px;
+        }
+    }
+    .dash {
+        margin-left: 10px;
+    }
+}
+
+
+/***********************************
+    Arrow Group Component
+***********************************/
+.arrow-wrap {
+    display: flex;
+    align-items: center;
+    > div {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 27px;
+        height: 27px;
+        border: 1px solid #777;
+        border-radius: 3px;
+        cursor: pointer;
+        &:not(:last-child) {
+            margin-right: 7px;
+        }
+        &:hover {
+            background: #eee;
+        }
+    }
+    .desc {
+        margin-left: 5px;
+        margin-bottom: 0;
+        font-size: 0.875rem;
+        color: #777;
+    }
+}
